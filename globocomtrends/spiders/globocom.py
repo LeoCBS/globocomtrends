@@ -17,9 +17,4 @@ class GlobocomSpider(CrawlSpider):
     def parse_item(self, response):
         i = {}
         i['title'] = response.xpath('//title').extract()
-        conn = r.connect(host='127.0.0.1',
-                         port=28015,
-                         db='test')
-        r.table("posts").insert({
-                "title": i['title']}).run(conn)
         return i

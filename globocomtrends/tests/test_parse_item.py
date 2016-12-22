@@ -8,10 +8,9 @@ class GlobocomSpiderTest(unittest.TestCase):
         self.spider = GlobocomSpider()
 
     def test_parse(self):
-        results = self.spider.parse(fake_response_from_file('raw_files/globo.html'))
-        for item in results:
-            self.assertIsNotNone(item['title'])
-            #self.assertIsNotNone(item['commentsCount'])
+        self.setUp()
+        item = self.spider.parse_item(fake_response_from_file('raw_files/globo.html'))
+        self.assertIsNotNone(item['title'])
 
 if __name__ == '__main__':
     unittest.main()

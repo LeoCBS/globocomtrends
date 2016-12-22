@@ -3,8 +3,6 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-import rethinkdb as r
-
 class GlobocomSpider(CrawlSpider):
     name = 'globocom'
     allowed_domains = ['globo.com']

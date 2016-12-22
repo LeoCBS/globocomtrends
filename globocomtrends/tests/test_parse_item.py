@@ -1,11 +1,11 @@
 import unittest
-from globocomtrends.spiders import globocom
-from responses import fake_response_from_file
+from globocomtrends.spiders.globocom import GlobocomSpider
+from globocomtrends.tests import fake_response_from_file
 
 class GlobocomSpiderTest(unittest.TestCase):
 
     def setUp(self):
-        self.spider = globocom.GlobocomSpider()
+        self.spider = GlobocomSpider()
 
     def test_parse(self):
         results = self.spider.parse(fake_response_from_file('raw_files/globo.html'))

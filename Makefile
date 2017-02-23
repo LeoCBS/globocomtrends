@@ -5,5 +5,6 @@ image:
 	docker build -t $(IMAGE) .
 
 check: image
-	docker run --rm $(IMAGE) python globocomtrends/tests/test_parse_item.py
+	python tests/parser_tests.py
+	docker run --rm $(IMAGE) python tests/parser_tests.py
 

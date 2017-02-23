@@ -3,8 +3,6 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-import rethinkdb as r
-
 class GlobocomSpider(CrawlSpider):
     name = 'globocom'
     allowed_domains = ['globo.com']
@@ -17,9 +15,4 @@ class GlobocomSpider(CrawlSpider):
     def parse_item(self, response):
         i = {}
         i['title'] = response.xpath('//title').extract()
-        conn = r.connect(host='127.0.0.1',
-                         port=28015,
-                         db='test')
-        r.table("posts").insert({
-                "title": i['title']}).run(conn)
         return i

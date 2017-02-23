@@ -7,9 +7,6 @@ class GlobocomSpider(CrawlSpider):
     name = 'globocom'
     allowed_domains = ['globo.com']
     start_urls = ['http://globo.com/']
-    custom_settings = {
-        'DOWNLOAD_DELAY': 1
-    }
 
     rules = (
         Rule(

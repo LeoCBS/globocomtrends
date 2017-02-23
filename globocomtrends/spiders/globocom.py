@@ -1,25 +1,24 @@
 # -*- coding: utf-8 -*-
-import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
-import rethinkdb as r
 
 class GlobocomSpider(CrawlSpider):
     name = 'globocom'
     allowed_domains = ['globo.com']
     start_urls = ['http://globo.com/']
+    custom_settings = {
+        'DOWNLOAD_DELAY': 1
+    }
 
     rules = (
-        Rule(LinkExtractor(allow=r'.html'), callback='parse_item', follow=True),
+        Rule(
+            LinkExtractor(allow=r'.html'),
+            callback='parse_item', follow=True
+        ),
     )
 
     def parse_item(self, response):
         i = {}
         i['title'] = response.xpath('//title').extract()
-        conn = r.connect(host='127.0.0.1',
-                         port=28015,
-                         db='test')
-        r.table("posts").insert({
-                "title": i['title']}).run(conn)
         return i

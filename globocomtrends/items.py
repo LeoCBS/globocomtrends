@@ -8,7 +8,6 @@
 import scrapy
 
 
-class GlobocomtrendsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class PageInfo(scrapy.Item):
+    title = scrapy.Field()
+    comments_count = scrapy.Field()

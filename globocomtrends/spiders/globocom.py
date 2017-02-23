@@ -2,6 +2,8 @@
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
+import parser
+
 
 class GlobocomSpider(CrawlSpider):
     name = 'globocom'
@@ -16,6 +18,4 @@ class GlobocomSpider(CrawlSpider):
     )
 
     def parse_item(self, response):
-        i = {}
-        i['title'] = response.xpath('//title').extract()
-        return i
+        return parser.parse_item(response)

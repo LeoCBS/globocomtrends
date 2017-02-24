@@ -16,7 +16,9 @@ class ParserTests(unittest.TestCase):
         item = parser.parse_item(
                 fake_response_from_file('resources/comments.html')
         )
-        #self.assertIsNotNone(item['title'])
+        self.assertIn('title', item)
+        self.assertIn('comments_count', item)
+        self.assertEqual(item['comments_count'], 643)
 
 
 if __name__ == '__main__':

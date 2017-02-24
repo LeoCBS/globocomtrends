@@ -8,6 +8,6 @@
 import scrapy
 
 
-class PageInfo(scrapy.Item):
+class PageInfoItem(scrapy.Item):
     title = scrapy.Field()
     comments_count = scrapy.Field()

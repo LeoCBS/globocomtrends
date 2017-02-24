@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
-import scrapy
+from globocomtrends.items import PageInfo
 
 
 def parse_item(response):
-    item = scrapy.Item()
+    item = PageInfo()
+    print(item)
     item['title'] == response.xpath('//title').extract()
     item['comment_count'] = response.xpath(
             '//div[contains(@id,"glbComentarios-contador")]'

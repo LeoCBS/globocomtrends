@@ -1,1 +1,2 @@
-scrapy==1.2.1
+scrapy==1.3.2
+beautifulsoup4==4.4.1

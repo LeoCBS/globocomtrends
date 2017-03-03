@@ -7,4 +7,8 @@ Scrapy globo.com trends
 
 ## Requirements
 
-* scrapy==1.3.2
+* Docker >= 1.9.x
+
+## how to run tests
+
+    make check

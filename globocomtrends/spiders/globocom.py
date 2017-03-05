@@ -6,7 +6,7 @@ import parser
 
 
 class GlobocomSpider(CrawlSpider):
-    name = 'globocom'
+    name = 'globocomtrends'
     allowed_domains = ['globo.com']
     start_urls = ['http://globo.com/']
 

@@ -13,6 +13,8 @@ BOT_NAME = 'globocomtrends'
 
 SPIDER_MODULES = ['globocomtrends.spiders']
 NEWSPIDER_MODULE = 'globocomtrends.spiders'
+MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_DATABASE = 'globocomtrends'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -64,9 +66,9 @@ DOWNLOAD_DELAY = 3
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'globocomtrends.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'globocomtrends.pipelines.MongoDBPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

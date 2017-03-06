@@ -3,7 +3,7 @@ Scrapy globo.com trends
 
 ## How to run spider:
 
-    scrapy crawl globocom -o quotes.json    
+    scrapy crawl globocomtrends -o quotes.json    
 
 ## Requirements
 

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-
-import parser
+from globocomtrends.spiders import parser
 
 
 class GlobocomSpider(CrawlSpider):
